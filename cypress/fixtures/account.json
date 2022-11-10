@@ -1,0 +1,19 @@
+{
+    "userTest": {
+        "username": "admin@actable.ai",
+        "password": "actable@2021",
+        "url": "https://test.actable.ai"
+    },
+    "userDev": {
+        "username": "hieu.tran+1@enouvo.com",
+        "password": "123456",
+        "url": "https://dev.actable.ai"
+    },
+    "userTestHieuTran": {
+        "username": "hieu.tran@enouvo.com",
+        "password": "123456",
+        "url": "https://test.actable.ai"
+    }
+
+
+}

@@ -1,0 +1,56 @@
+{
+  "name": "bdd-cypress-cucumber-typescript-example",
+  "version": "1.0.0",
+  "description": "BDD, Cypress + Cucumber + Typescript",
+  "main": "index.js",
+  "scripts": {
+    "open": "cypress open",
+    "run": "cypress run",
+    "pretest": "rm -rf cypress/cucumber-json cypress/screenshots cypress/videos",
+    "tag:smoke": "./node_modules/.bin/cypress-tags run -e TAGS='@smoke'",
+    "bundled:all": "cypress run --spec **/*.features",
+    "test": "cypress run --spec \"**/*.feature\"",
+    "test:all": "cypress run --spec \"**/*.features\"",
+    "docs": "Pickles --output-directory=./documentation --feature-directory=./cypress/e2e",
+    "runCucumber": "cypress run --browser chrome --spec '**/Facebook/Facebook.feature'",
+    "generalReport": "node reportCucumber.js"
+  },
+  "keywords": [
+    "BDD",
+    "cucumber",
+    "cypress",
+    "qa",
+    "testing",
+    "typescript"
+  ],
+  "author": {
+    "name": "Erik Ccanto",
+    "email": "ccanto.erik@gmail.com",
+    "url": "https://github.com/eccanto"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^11.0.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "tsify": "^5.0.4",
+    "typescript": "^4.5.3"
+  },
+  "devDependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@types/cypress-cucumber-preprocessor": "^4.0.1",
+    "@types/node": "^16.11.9",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-xpath": "^2.0.1",
+    "multiple-cucumber-html-reporter": "^3.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/e2e/**",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/cucumber",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}
