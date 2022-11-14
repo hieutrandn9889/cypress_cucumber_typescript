@@ -10,10 +10,10 @@ jobs:
       matrix:
         job: [0]
 
-    container: cypress/included:10.10.0
+    container: cypress/included:11.0.1
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: npm install
         run: |
           yarn install --frozen-lockfile
@@ -47,3 +47,12 @@ jobs:
       - name: Send email
         run: yarn sendEmail
         continue-on-error: false
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: hieutranCypress
+          SLACK_TITLE: Regression Test
+          SLACK_MESSAGE: "New changes :rocket:"
+          SLACK_COLOR: ${{ job.status }}
