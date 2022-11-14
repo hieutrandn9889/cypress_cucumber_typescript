@@ -12,7 +12,7 @@
     "test": "cypress run --spec \"**/*.feature\"",
     "test:all": "cypress run --spec \"**/*.features\"",
     "docs": "Pickles --output-directory=./documentation --feature-directory=./cypress/e2e",
-    "runCucumber": "cypress run --browser chrome --spec '**/Facebook/Facebook.feature'",
+    "runCucumber": "cypress run --browser chrome --spec '**/Facebook/Facebook.feature' --browser chrome --env ENV=qa",
     "generalReport": "node reportCucumber.js"
   },
   "keywords": [
