@@ -41,7 +41,7 @@ jobs:
         if: always()
         with:
           name: cypress-execution-report
-          path: cypress/reports/report.html/html
+          path: cypress/reports/cucumber/report.html
           retention-days: 30
 
       - name: Send email
