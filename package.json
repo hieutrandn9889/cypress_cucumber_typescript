@@ -6,14 +6,17 @@
   "scripts": {
     "open": "cypress open",
     "run": "cypress run",
-    "pretest": "rm -rf cypress/cucumber-json cypress/screenshots cypress/videos",
     "tag:smoke": "./node_modules/.bin/cypress-tags run -e TAGS='@smoke'",
     "bundled:all": "cypress run --spec **/*.features",
     "test": "cypress run --spec \"**/*.feature\"",
     "test:all": "cypress run --spec \"**/*.features\"",
-    "docs": "Pickles --output-directory=./documentation --feature-directory=./cypress/e2e",
     "runCucumber": "cypress run --browser chrome --spec '**/Facebook/Facebook.feature' --browser chrome --env ENV=qa",
-    "generalReport": "node reportCucumber.js"
+    "generalReport": "node reportCucumber.js",
+    "removeFile": "node removeFile.js",
+    "zipFolder": "node zipFolder.js",
+    "sendEmail": "node sendEmail.js",
+    "run_key": "yarn cypress run --record --key 7b525175-b127-4285-9480-1b4a1c044af1",
+    "runParallel": "cypress run --browser chrome --record --key 7b525175-b127-4285-9480-1b4a1c044af1 --parallel --spec '**/analyticDatabase/analyticDatabaseUnivariateChart.feature'"
   },
   "keywords": [
     "BDD",
@@ -41,7 +44,12 @@
     "@types/node": "^16.11.9",
     "cypress-file-upload": "^5.0.8",
     "cypress-xpath": "^2.0.1",
-    "multiple-cucumber-html-reporter": "^3.0.1"
+    "multiple-cucumber-html-reporter": "^3.0.1",
+    "@sendgrid/mail": "^7.7.0",
+    "archiver": "^5.3.1",
+    "dotenv": "^16.0.3",
+    "fs-extra": "^10.1.0",
+    "playwright-webkit": "^1.27.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,

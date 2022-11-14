@@ -3,6 +3,9 @@ node_modules/
 
 # dotenv environment variables file
 .env
+*/videos
+*/screenshots
+/cypress/reports/cucumber
 
 # cypress files
 cypress/videos
