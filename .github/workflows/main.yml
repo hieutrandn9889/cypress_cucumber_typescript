@@ -16,24 +16,24 @@ jobs:
       - uses: actions/checkout@v2
       - name: npm install
         run: |
-          cd "db_api_ui" && yarn install --frozen-lockfile
+          yarn install --frozen-lockfile
 
       - name: Remove files
         run: |
-          cd "db_api_ui" && yarn removeFile
+          yarn removeFile
         continue-on-error: false
 
       - name: Run Testing
         run: |
-          cd "db_api_ui" && yarn runCucumber
+          yarn runCucumber
         continue-on-error: false
 
       - name: Generate reports
-        run: cd "db_api_ui" && yarn generalReport
+        run: yarn generalReport
         continue-on-error: false
 
       - name: Zip folder
-        run: cd "db_api_ui" && yarn zipFolder
+        run: yarn zipFolder
         continue-on-error: false
       
       - name: Uploading artifact
@@ -45,5 +45,5 @@ jobs:
           retention-days: 30
 
       - name: Send email
-        run: cd "db_api_ui" && yarn sendEmail
+        run: yarn sendEmail
         continue-on-error: false
