@@ -1,7 +1,8 @@
 import { googleResultsPage } from "./googlePage";
 import googleUI from "../../interfaces/Google/googleUI";
+import { CommonPage } from "../../intergration/commonPage";
 
-export class googleSearchPage {
+export class googleSearchPage extends CommonPage {
   static visit() {
     cy.visit("/");
   }
@@ -12,6 +13,7 @@ export class googleSearchPage {
   }
 
   static pressSearch() {
+    this.clickGetElements(googleUI.SEARCH_BUTTON);
     cy.get(googleUI.SEARCH_BUTTON).contains(googleUI.SEARCH_TEXT).click();
     return new googleResultsPage();
   }
