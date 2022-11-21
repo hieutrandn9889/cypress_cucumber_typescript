@@ -7,6 +7,7 @@ https://github.com/hieuTranEnouvo/cypress_cucumber_typescript/settings/secrets/a
 # fix conflicts with steping
 
 1. Get code from UAT
-2. Create a new branch frome UAT branch
-3. Fix code conflicts
-4. Merge this branch to UAT branch
+2. Create a new branch from UAT branch
+3. Merge code from hieu_tran_uat to new branch
+4. Fix code conflicts
+5. Merge this new branch to UAT branch
