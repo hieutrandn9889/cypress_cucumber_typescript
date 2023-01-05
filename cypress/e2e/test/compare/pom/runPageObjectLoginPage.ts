@@ -1,5 +1,5 @@
 import cypress = require("cypress");
-import { loginPage } from "./loginPage";
+import { loginPage } from "./pages/loginPage";
 
 describe("Api request", () => {
   it("Api request", () => {
