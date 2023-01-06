@@ -29,7 +29,7 @@ import googleUI from "../e2e/interfaces/Google/googleUI";
 declare global {
   namespace Cypress {
     interface Chainable {
-      loginTestUserName(username: string, password: string): void;
+      loginTestUserName(username: string, password: string): Chainable<any>;
     }
   }
 }
