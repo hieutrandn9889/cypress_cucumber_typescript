@@ -33,7 +33,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "cypress": "^12.3.0",
+    "cypress": "^12.4.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "tsify": "^5.0.4",
     "typescript": "^4.9.4"
@@ -44,7 +44,7 @@
     "@types/node": "^16.11.9",
     "cypress-file-upload": "^5.0.8",
     "cypress-xpath": "^2.0.1",
-    "multiple-cucumber-html-reporter": "^3.0.1",
+    "multiple-cucumber-html-reporter": "^3.1.0",
     "@sendgrid/mail": "^7.7.0",
     "archiver": "^5.3.1",
     "dotenv": "^16.0.3",
